@@ -1,0 +1,23 @@
+{
+  "name": "spotify-recommend",
+  "version": "1.0.0",
+  "description": "An app to recommend artists and songs using the Spotify Web API",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "NodeJS",
+    "express",
+    "event",
+    "emitter"
+  ],
+  "author": "David Conner",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "querystring": "^0.2.0",
+    "unirest": "^0.5.0"
+  }
+}
