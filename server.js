@@ -1,4 +1,4 @@
-"use strict";
+"use strict()";
 
 const unirest = require('unirest');
 const express = require('express');
@@ -8,7 +8,7 @@ const app = express();
 app.use(express.static('public'));
 
 let getFromApi = function(endpoint, args) {
-    let emitter = new EventEmitter;
+    let emitter = new EventEmitter();
     unirest.get('https://api.spotify.com/v1' + endpoint)
         .qs(args)
         .end(function(response) {
@@ -31,8 +31,8 @@ app.get('/search/:name', function(req, res) {
 
     searchReq.on('end', function(item) {
         let completed = 0;
-        let checkComplete = function(allArtists) {
-            if (completed === allArtists.length) {
+        let checkComplete = function() {
+            if (completed === artist.related.length) {
                 res.json(artist);
             }
         };
@@ -53,8 +53,8 @@ app.get('/search/:name', function(req, res) {
                     }
                 );
                 topTracks.on('end', function(item) {
-                    artist.related.tracks = item.tracks;
-                    artist.related.tracks.forEach(function(track) {
+                    relatedArtist.tracks = item.tracks;
+                    relatedArtist.tracks.forEach(function(track) {
                         console.log(track.name);
                     });
                     completed += 1;
